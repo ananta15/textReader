@@ -1,0 +1,101 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>login</h1>
+    <ul>
+        <% if(messages.success_msg){ %>
+            <li><%= messages.success_msg %></li>
+        <% } %>
+        
+    </ul>
+
+    <ul>
+        <% if(messages.error){  %>
+            <li><%= messages.error %></li>
+        <% } %>
+    </ul>
+    <form action="/login" method="post">
+        <div>
+            <input type="email" id="email" name="email" placeholder="Enter email" required>
+        </div>
+        <div>
+            <input type="password" id="password" name="password" placeholder="Enter password" required>
+        </div>
+        <div>
+            <input type="submit" value="Login">
+        </div>
+    </form>
+    <a href="/register">Not registered? Click here to register</a>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Responsive Login Page</title>
+    <link rel="stylesheet" href="/public/css/loginstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="form">
+      <form class="login-form" action="/login" method="post">
+        <i class="fas fa-user-circle"></i>
+        <input class="user-input" type="email" name="email" placeholder="Email address" required>
+        <input class="user-input" type="password" name="password" placeholder="Password" required>
+        <div class="options-01">
+          <label class="remember-me"><input type="checkbox" name="">Remember me</label>
+          <a href="#">Forgot your password?</a>
+        </div>
+        <input class="btn" type="submit" name="" value="LOGIN">
+        <div class="options-02">
+            
+            <ul style="color:green;">
+                <% if(messages.success_msg){ %>
+                    <%= messages.success_msg %>
+                <% } %>
+                
+            </ul>
+        
+            <ul style="color: red;">
+                <% if(messages.error){  %>
+                    <%= messages.error %>
+                <% } %>
+            </ul>
+          <p>Not Registered? <a href="/register">Create an Account</a></p>
+        </div>
+      </form>
+      <!-- <form class="signup-form" action="/register" method="post">
+        <i class="fas fa-user-plus"></i>
+        <input class="user-input" type="text" name="name" placeholder="Username" required>
+        <input class="user-input" type="email" name="email" placeholder="Email Address" required>
+        <input class="user-input" type="password" name="password" placeholder="Password" required>
+        <input class="btn" type="submit" name="" value="SIGN UP">
+        <div class="options-02">
+          <p>Already Registered? <a href="#">Sign In</a></p>
+        </div>
+      </form>
+       -->
+    </div>
+   
+
+    <!-- <script type="text/javascript">
+    $('.options-02 a').click(function(){
+      $('form').animate({
+        height: "toggle", opacity: "toggle"
+      }, "slow");
+    });
+    </script> -->
+
+  </body>
+</html>
+                           

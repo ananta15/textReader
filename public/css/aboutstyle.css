@@ -1,0 +1,19 @@
+body{
+    
+    background: url(bg.png)no-repeat;
+    background-size: cover;
+}
+.heading{
+    color: #0e0e53;
+    font-family: "Times New Roman", Times, serif;
+    height: 56px;
+    margin:45px auto ;
+}
+.heading2{
+    color: #cbe6ec;
+}
+.para{
+    background-color: rgb(224, 217, 226);
+    border-radius: 10px;
+    text-align: justify;
+}

@@ -1,0 +1,118 @@
+<!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> TextReader</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/profileStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  </head>
+  <body>
+
+    <section>
+    	<input type="checkbox" id="check">
+      <header>
+        <h2><a href="index.html" class="logo">TextReader</a></h2>
+        <div class="navigation">
+          <a href="/logout">LogOut</a>
+        </div>
+        <label for="check">
+        	<i class="fas fa-bars menu-btn"></i>
+        	<i class="fas fa-times close-btn"></i>
+        </label>
+      </header>
+      <div class="content">
+        <div class="info">
+          <h2>NOT IN A MOOD TO READ? <br><span>JUST UPLOAD AND LISTEN!</span></h2>
+          <p>TextReader is an online Text to Speech converter.It lets you upload your text or document and converts it to mp3 so that you can listen it anytime anywhere.We facilitate high-quality natural-sounding voices.Choose the voice you like, insert text, click play to generate the synthesized speech and enjoy listening.</p>
+          <a href="login.html" class="info-btn">Let's Get Started!</a>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> TextReader</title>
+  <link rel="prefetch" href="/public/css/pause1.svg">
+  <link rel="prefetch" href="/public/css/play1.svg">
+  <link rel="prefetch" href="/public/css/stop1.svg">
+  <link rel="stylesheet" href="/public/css/profileStyle.css">
+
+</head>
+
+<body>
+  <script src="/public/js/convert.js"></script>
+  <section>
+    <input type="checkbox" id="check">
+    <header>
+      <h2><a href="/" class="logo">TextReader</a></h2>
+      <div class="navigation">
+        <a href="/logout">LogOut</a>
+      </div>
+      <label for="check">
+        <i class="fas fa-bars menu-btn"></i>
+        <i class="fas fa-times close-btn"></i>
+      </label>
+    </header>
+
+    <div>
+      <button id=play></button> &nbsp;
+      <button id=pause></button> &nbsp;
+      <button id=stop></button>
+    </div>
+    <form action="/profile" method="post" enctype="multipart/form-data" style="position: absolute;top:165px;bottom:110px;left:35%;">
+      <input type="file" name="file">
+      <input type="submit" value="Upload">
+    </form>
+    <!-- <div class="buttons_row">
+      
+      <select class="btn btn-template-primary" id="select_language">
+        <option value="Google UK English Male">UK English (default)</option>
+      </select>
+
+      <select class="btn btn-template-primary" id="select_speed">
+        <option value=0.9>Normal Speed</option>
+        <option value=0.6>Very slow</option>
+        <option value=0.75>Slow</option>
+        <option value=1.2>Fast</option>
+        <option value=1.35>Faster</option>
+        <option value=1.5>Even Faster</option>
+        <option value=2>Speeding x2</option>
+        <option value=3>Speeding x3</option>
+      </select>
+    </div> -->
+  
+    <div style="position: absolute;top:210px;bottom:70px;right:20%;left:20%;">
+      <textarea id="tts"
+        style="text-align:left;font-family: sans-serif;outline: none;border-color: #37a7bb;border-radius: 10px;resize: none;width:100%;height:100%;"
+        placeholder="
+              Write something in this box and click play.
+              Our text-to-speech will read it out loud for you.
+              You can also drag files to here and edit the text.
+              Go ahead, enjoy listening to any written content :)">
+                <% if(typeof errors!= 'undefined') {%>
+                    <% errors.forEach(error=>{ %>
+                       <%= error.message %>
+                    <%}) %>
+                    <%}%>
+            
+            </textarea>
+            
+      <textarea id="text_box_mirror" style="font-family: sans-serif;visibility:hidden;"></textarea>
+    </div>
+
+
+
+  </section>
+
+</body>
+
+</html>
